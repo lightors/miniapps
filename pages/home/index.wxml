@@ -1,0 +1,42 @@
+<!--pages/home/index.wxml-->
+<swiper indicator-dots="{{true}}" 
+indicator-color="#fff" 
+autoplay="{{true}}" interval="{{3000}}"
+circular="{{true}}"
+indicator-active-color="yellow">
+  <swiper-item>
+    <image mode="aspectFit" src="http://p1.music.126.net/ZUumIFbrM-4V9H0VlhKTqQ==/109951164767141277.jpg?imageView&quality=89"></image>
+  </swiper-item>
+  <swiper-item>
+    <image mode="aspectFit" src="http://p1.music.126.net/oqbroNCHcZ4duhxUdTUUmQ==/109951164767168238.jpg?imageView&quality=89"></image>
+  </swiper-item>
+  <swiper-item>
+    <image mode="aspectFit" src="http://p1.music.126.net/dUngzBPrrhjaozshGg9qcA==/109951164769063461.jpg?imageView&quality=89"></image>
+  </swiper-item>
+</swiper>
+
+<navigator 
+url="../menu/index" open-type="switchTab">
+<button>跳转
+</button>
+</navigator>
+
+<view>
+{{nickname}}
+</view>
+
+<view wx:for="{{arr}}">
+{{item.id}}---{{item.name}}-----{{index}}
+</view>
+
+<button bindtap="add">新增</button>
+<view bindtap="go">
+跳转
+</view>
+
+<view wx:for="{{recommends}}">
+{{item.item_id}}
+<!-- <image src="{{item.image}}"></image> -->
+
+
+</view>
