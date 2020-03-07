@@ -5,3 +5,5 @@
 <button type="primary" bindtap="takePhoto">拍照</button>
 <view>预览</view>
 <image mode="widthFix" src="{{src}}"></image>
+
+<button bindtap="callme">联系客服</button>

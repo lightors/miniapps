@@ -6,11 +6,27 @@ Page({
     })
   },
 
+  settext(e) {
+   this.setData({
+     count: e.detail.value
+   })
+  },
+
+  settype(e) {
+    //console.log(e.currentTarget.dataset.type)
+    this.setData({
+      activeType:e.currentTarget.dataset.type
+    }) 
+    
+  },
+
   /**
    * 页面的初始数据
    */
   data: {
     nickname: "is",
+    count:1,
+    activeType:'1',
     arr: [{
         id: 1,
         name: 123
