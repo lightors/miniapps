@@ -21,10 +21,6 @@ url="../menu/index" open-type="switchTab">
 </button>
 </navigator>
 
-<view wx:for="{{arr}}">
-{{item.id}}---{{item.name}}-----{{index}}
-</view>
-
 <button bindtap="add">新增</button>
 <view bindtap="go">
 跳转
@@ -40,6 +36,12 @@ url="../menu/index" open-type="switchTab">
 <view class="{{activeType==='3'?'active':''}}" data-type="3"  bindtap="settype">飞机票</view>
 
 </view>
+
+<view wx:for="{{arr}}" style="display:flex;">
+{{item.name}}---{{index}}  
+<button bindtap="del" data-index="{{index}}">删除</button>
+</view>
+
 
 <view wx:for="{{recommends}}">
 {{item.item_id}}

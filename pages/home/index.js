@@ -1,4 +1,8 @@
 // pages/home/index.js
+let common = require('../../utils/common.js')
+
+
+
 Page({
   go() {
     wx.navigateTo({
@@ -15,8 +19,27 @@ Page({
   settype(e) {
     //console.log(e.currentTarget.dataset.type)
     this.setData({
-      activeType:e.currentTarget.dataset.type
+      activeType:common.getData(e).type
     }) 
+  
+  },
+
+  del(e) {
+    console.log(common.getData);
+    wx.showModal({
+      title: '友情提示',
+      content: '确定要删除吗',
+      success: res => {
+        if(res.confirm) {
+          this.data.arr.splice
+          (common.getData(e).index, 1)
+          this.setData({
+            arr: this.data.arr
+          })
+        }
+      }
+    })
+
     
   },
 
