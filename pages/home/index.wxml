@@ -37,15 +37,15 @@ url="../menu/index" open-type="switchTab">
 
 </view>
 
-<view wx:for="{{arr}}" style="display:flex;">
+<!-- <view wx:for="{{arr}}" style="display:flex;">
 {{item.name}}---{{index}}  
 <button bindtap="del" data-index="{{index}}">删除</button>
-</view>
+</view> -->
 
 
-<view wx:for="{{recommends}}">
+<view wx:for="{{recommends}}" wx:key="key" style="display:flex;">
 {{item.item_id}}
 <!-- <image src="{{item.image}}"></image> -->
-
+<button bindtap="del" data-index="{{index}}">删除</button>
 
 </view>

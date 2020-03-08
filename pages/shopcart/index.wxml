@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+</view>
+
+<view class="footbar">
+ 
+</view>

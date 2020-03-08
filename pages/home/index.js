@@ -1,5 +1,7 @@
 // pages/home/index.js
-let common = require('../../utils/common.js')
+// let common = require('../../utils/common.js')
+
+import common from '../../utils/common.js'
 
 
 
@@ -25,16 +27,16 @@ Page({
   },
 
   del(e) {
-    console.log(common.getData);
+    console.log(common.getData(e));
     wx.showModal({
       title: '友情提示',
       content: '确定要删除吗',
       success: res => {
         if(res.confirm) {
-          this.data.arr.splice
+          this.data.recommends.splice
           (common.getData(e).index, 1)
           this.setData({
-            arr: this.data.arr
+            recommends: this.data.recommends
           })
         }
       }
@@ -92,29 +94,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.request({
-      url: 'http://123.207.32.32:8000/api/wh/recommend',
-      data: {
-
-      },
-      method:'GET',
-      success: res => {
-        console.log(res.data.data.list)
-        this.setData({
-          recommends: res.data.data.list,
-          
-        },)
-          //console.log(recommends)
-        
-      }
+    common.get('http://123.207.32.32:8000/api/wh/recommend')
+    .then(res=> {
+      this.setData({
+        recommends: res.data.list
+      })
     })
+
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-
+  onReady: function() { 
   },
 
   /**

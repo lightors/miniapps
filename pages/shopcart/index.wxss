@@ -1,0 +1,23 @@
+/* pages/shopcart/index.wxss */
+.footbar {
+  position: fixed;
+  bottom:0;
+  width: 100vw;
+  height: 120rpx;
+  background: #fff;
+
+}
+
+.container {
+  overflow: hidden;
+  background: #eee;
+  min-height: 100vh;
+}
+
+.item {
+  width: 100vw;
+  height: 200rpx;
+  background: #fff;
+  margin-top: 20rpx;
+
+}
