@@ -19,5 +19,84 @@
   height: 200rpx;
   background: #fff;
   margin-top: 20rpx;
+  display: flex;
+  align-items: center
+
+
+}
+.middle {
+  width: 300rpx
+}
+
+
+.name {
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.desc {
+  font-size: 26rpx;
+  padding: 10rpx 0;
+  color:#999
+}
+
+.price {
+  padding: 0 10rpx;
+  font-weight: bold;
+
+}
+
+
+.right {
+  position: absolute;
+  right: 10rpx;
+}
+.right .jian {
+  border: 2px solid #82a5d3;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60rpx;
+  color: #82a5d3;
+  font-size: 36rpx;
+}
+.right .jia {
+  background: #82a5d3;
+   width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.right input {
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color:#82a5d3;
+  text-align: center
+}
+ 
+image {
+  width:80rpx;
+  height:80rpx;  
+} 
+.left {
+  margin: 0 30rpx;
+  color:#82a5d3
+
+}
+
+
+.btn {
+  width: 300rpx;
+  background:#82a5d3;
+  height:100%;
+  color:#fff;
+  text-align: center
 
 }

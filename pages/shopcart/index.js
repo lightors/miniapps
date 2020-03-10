@@ -1,10 +1,48 @@
 // pages/shopcart/index.js
+import common from "../../utils/common.js"
+
 Page({
+  select(e) {
+    //console.log(common.getData(e).id);
+    let curr = this.data.goodslist.find(r => r.id === common.getData(e).id)
+    console.log(curr);
+    curr.isSelect = !curr.isSelect;
+    this.setData({
+      goodslist:this.data.goodslist
+    })
+
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
+    goodslist:[
+      {
+        id:1,
+        name:"星冰乐",
+        desc:"大杯/去冰/七分糖",
+        price:21,
+        count:1,
+        isSelect:true,
+      },
+      {
+        id: 2,
+        name: "抹茶拿铁",
+        desc: "大杯/去冰/七分糖",
+        price: 25,
+        count: 4,
+        isSelect: false,
+      },
+      {
+        id: 3,
+        name: "美式咖啡",
+        desc: "大杯/七分糖",
+        price: 29,
+        count: 3,
+        isSelect: false,
+      },
+    ]
 
   },
 

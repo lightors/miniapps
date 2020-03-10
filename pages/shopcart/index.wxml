@@ -1,10 +1,36 @@
 <view class="container">
-  <view class="item"></view>
-  <view class="item"></view>
-  <view class="item"></view>
-  <view class="item"></view>
-</view>
+  <view class="item" wx:for="{{goodslist}}" wx:key="key">
+    <view  class="left">
+      <image bindtap="select" data-id="{{item.id}}" 
+      src="/assets/img/check{{item.isSelect?'':'1'}}.png"></image>
+    </view>
 
-<view class="footbar">
- 
+    <view class="middle">
+      <view class="name">{{item.name}}</view>
+      <view class="desc">{{item.desc}}</view>
+    </view>
+    <view class="price">￥{{item.price}}</view>
+    <view class="flex right">
+      <view class="jian">-</view>
+      <input value="{{item.count}}"></input>
+      <view class="jia">+</view>
+    </view>
+
+
+  </view>
+
+  <view class="footbar flex a-center j-space">
+    <view class="flex a-center">
+      <view>
+        <image src="/assets/img/check.png" class="left"></image>
+      </view>全选
+    </view>
+
+
+    <view style="font-weight:bold;font-size:40rpx;">￥29</view>
+    <view class="btn flex a-center j-center">
+      去结算
+    </view>
+  </view>
+
 </view>
