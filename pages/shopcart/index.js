@@ -2,21 +2,87 @@
 import common from "../../utils/common.js"
 
 Page({
+  //计算总价
+  calcTotalMoney() {
+    this.data.totalMoney=0;
+    this.data.goodslist.filter(r=>r.isSelect).forEach(r=> {
+      this.data.totalMoney += r.price *r.count
+    })
+
+    this.setData({
+      totalMoney: this.data.totalMoney
+    })
+  },
+
+
+
   select(e) {
     //console.log(common.getData(e).id);
     let curr = this.data.goodslist.find(r => r.id === common.getData(e).id)
-    console.log(curr);
+    //console.log(curr);
     curr.isSelect = !curr.isSelect;
+
+    //遍历是否全选
+    var isSelectALL = this.data.goodslist.every(r=> r.isSelect);
+    //console.log(isSelectALL);
+
+    this.setData({
+      goodslist:this.data.goodslist,
+      isSelectAll:isSelectALL
+    })
+
+    this.calcTotalMoney();
+  },
+
+
+  selectAll() {
+    this.data.isSelectAll = !this.data.isSelectAll
+
+    this.data.goodslist.forEach(r => {
+      r.isSelect = this.data.isSelectAll
+    })
+
+    this.setData({
+      isSelectAll: this.data.isSelectAll,
+      goodslist: this.data.goodslist
+    })
+
+    this.calcTotalMoney();
+  },
+
+
+  //加减
+  jian(e) {
+    let curr = this.data.goodslist.find(r => r.id ===common.getData(e).id);
+
+    if(--curr.count < 1) curr.count = 1;
+
     this.setData({
       goodslist:this.data.goodslist
     })
 
+    this.calcTotalMoney();
   },
+
+  jia(e) {
+    let curr = this.data.goodslist.find(r => r.id === common.getData(e).id);
+
+    if (++curr.count > 99) curr.count = 99;
+
+    this.setData({
+      goodslist: this.data.goodslist
+    })
+
+    this.calcTotalMoney();
+  },
+
 
   /**
    * 页面的初始数据
    */
   data: {
+    totalMoney:0,
+    isSelectAll:false,
     goodslist:[
       {
         id:1,
@@ -50,7 +116,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.calcTotalMoney();
   },
 
   /**

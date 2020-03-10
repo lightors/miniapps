@@ -20,7 +20,8 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"enhance": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
@@ -60,6 +61,13 @@
 					"id": -1,
 					"name": "购物车",
 					"pathName": "pages/shopcart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/menu/index",
+					"pathName": "pages/menu/index",
 					"scene": null
 				}
 			]

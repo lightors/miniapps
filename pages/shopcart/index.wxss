@@ -60,7 +60,7 @@
   text-align: center;
   line-height: 60rpx;
   color: #82a5d3;
-  font-size: 36rpx;
+  font-size: 60rpx;
 }
 .right .jia {
   background: #82a5d3;
@@ -70,7 +70,7 @@
   text-align: center;
   line-height: 60rpx;
   color: #fff;
-  font-size: 36rpx;
+  font-size: 60rpx;
 }
 
 .right input {

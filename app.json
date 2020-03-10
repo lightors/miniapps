@@ -43,6 +43,11 @@
       }
     ]
   },
+  "permission":{
+    "scope.userLocation":{
+      "desc":"需要获取您的地理位置，请确认授权"
+    }
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
