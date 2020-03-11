@@ -1,26 +1,27 @@
-function getData(e) {
+export function getData(e) {
   return e.currentTarget.dataset
 }
 
-function get(url, data) {
+export function $get(url, data) {
   return new Promise((resolve, reject) => {
       wx.showLoading({
         title: '加载中',
       })
       wx.request({
           url,
-          data: {},
+          data,
           method: 'GET',
           success: res => {
             //console.log(res.data.data.list)
             resolve(res.data)
           },
-          complete() {
-            wx.hideLoading()
-          },
+          
           fail(e) {
             reject(e)
           },
+        complete() {
+          wx.hideLoading()
+        },
           //console.log(recommends)
       })
       }
@@ -33,7 +34,7 @@ function get(url, data) {
   get
 } */
 
-export default {
-  getData,
-  get
-}
+// export default {
+//   getData,
+ 
+// }

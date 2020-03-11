@@ -1,7 +1,7 @@
 // pages/home/index.js
 // let common = require('../../utils/common.js')
 
-import common from '../../utils/common.js'
+import {$get,getData} from '../../utils/common.js'
 
 
 
@@ -21,20 +21,20 @@ Page({
   settype(e) {
     //console.log(e.currentTarget.dataset.type)
     this.setData({
-      activeType:common.getData(e).type
+      activeType:getData(e).type
     }) 
   
   },
 
   del(e) {
-    console.log(common.getData(e));
+    console.log(getData(e));
     wx.showModal({
       title: '友情提示',
       content: '确定要删除吗',
       success: res => {
         if(res.confirm) {
           this.data.recommends.splice
-          (common.getData(e).index, 1)
+          (getData(e).index, 1)
           this.setData({
             recommends: this.data.recommends
           })
@@ -81,7 +81,7 @@ Page({
     //console.log(111);
     this.data.arr.push({
       id:111231,
-      name:"lightpr"
+      name:"lightor"
     })
 
 
@@ -94,7 +94,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    common.get('http://123.207.32.32:8000/api/wh/recommend')
+    $get('http://123.207.32.32:8000/api/wh/recommend')
     .then(res=> {
       this.setData({
         recommends: res.data.list

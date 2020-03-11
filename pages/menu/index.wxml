@@ -3,6 +3,9 @@
 我的定位： {{address}}
 </view>
 
+<view>{{minDistanceShop.name}}</view>
+<view>据您{{minDistanceShop.distance}}m</view>
+
 
 
 <button class="foot" bindtap="callme">
