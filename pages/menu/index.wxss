@@ -3,8 +3,59 @@
   position: fixed;
   width: 100vw;
   bottom: 0;
+  
+}
+
+.nav {
+  position: relative;
+  margin: 10rpx 0;
+  height:100rpx;
+}
+
+.left {
+  position: absolute;
   left: 0;
+  padding:0 20rpx;
+  height:100rpx;
   
+}
+
+/* .right {
   
+} */
+
+
+.btn {
+  position: absolute;
+  right: 0;
+  height:100rpx;
+  border: 4rpx solid #82a5d3;
+  width: 180rpx;
+  padding: 4rpx;
+  color: #82a5d3;
+  border-radius: 50rpx;
+  font-size: 28rpx
+}
+
+.right view {
+  flex: 1;
+  text-align: center;
+  color:#82a5d3
+}
+
+.right view.active {
+  background: #82a5d3;
+  display: flex;
+  color:#fff;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50rpx;
+  
+}
+
+image {
+  width: 100%;
+  margin: 20rpx 0;
 }
 

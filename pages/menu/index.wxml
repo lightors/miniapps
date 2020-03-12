@@ -1,13 +1,21 @@
 <!--pages/menu/index.wxml-->
-<view>
-我的定位： {{address}}
+<!-- <view>
+我的定位： {{myAddress}}
+</view> -->
+<view class="nav">
+  <view class="left flex a-center">
+    <view style="font-weight:bold">{{minDistanceShop.name}}</view>
+    <view style="font-size:26rpx;color:#999;padding:10rpx 0">距您{{minDistanceShop.distance}}m</view>
+  </view>
+  <view class="right flex a-center btn">
+    <view>自提</view>
+    <view  class="active">外送</view>
+  </view>
 </view>
 
-<view>{{minDistanceShop.name}}</view>
-<view>据您{{minDistanceShop.distance}}m</view>
 
 
-
+<image src=" http://106.54.82.49/img/pe/banner.jpg "></image>
 <button class="foot" bindtap="callme">
-联系客服
+  联系客服
 </button>

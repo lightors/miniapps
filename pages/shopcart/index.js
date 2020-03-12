@@ -1,5 +1,5 @@
 // pages/shopcart/index.js
-import common from "../../utils/common.js"
+import {getData} from "../../utils/common.js"
 
 Page({
   //计算总价
@@ -17,8 +17,8 @@ Page({
 
 
   select(e) {
-    //console.log(common.getData(e).id);
-    let curr = this.data.goodslist.find(r => r.id === common.getData(e).id)
+    //console.log(getData(e).id);
+    let curr = this.data.goodslist.find(r => r.id === getData(e).id)
     //console.log(curr);
     curr.isSelect = !curr.isSelect;
 
@@ -53,7 +53,7 @@ Page({
 
   //加减
   jian(e) {
-    let curr = this.data.goodslist.find(r => r.id ===common.getData(e).id);
+    let curr = this.data.goodslist.find(r => r.id === getData(e).id);
 
     if(--curr.count < 1) curr.count = 1;
 
@@ -65,7 +65,7 @@ Page({
   },
 
   jia(e) {
-    let curr = this.data.goodslist.find(r => r.id === common.getData(e).id);
+    let curr = this.data.goodslist.find(r => r.id === getData(e).id);
 
     if (++curr.count > 99) curr.count = 99;
 
