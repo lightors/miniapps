@@ -1,3 +1,12 @@
+import {
+  BASE_URL
+} from '../config/index.js'
+
+export function getMock(url, data) {
+  return $get(BASE_URL + url,data)
+}
+
+
 export function getData(e) {
   return e.currentTarget.dataset
 }

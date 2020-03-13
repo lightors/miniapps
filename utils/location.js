@@ -2,7 +2,6 @@ import {
   TENCENT_MAP_KEY
 } from '../config/index.js'
 
-
 import {
   $get
 } from "../utils/common.js"
@@ -26,24 +25,36 @@ export async function getLocation() {
       },
 
       fail(e) {
-        console.log(e)
-        if (e.errMsg === 'getLocation:fail auth deny') {
-         wx.showModal({
-           title: '重要提示',
-           content: '本程序需要获取定位，请手动开启',         success() {
-             wx.openSetting({
-               success() {
-                 getLocation()
-               }
-             })
-           }
-         }) 
-        }
+        wx.getSetting({
+          success(res) {
+            if (!res.authSetting['scope.userLocation']) {
+              wx.showModal({
+                title: '重要提示',
+                content: '本程序需要获取定位，请手动开启',
+                success(res) {
+                  if (res.confirm) {
+                    wx.openSetting({
+                      success(res) {
+                        if (res.authSetting['scope.userLocation']) {
+                         wx.showToast({
+                           title: '授权成功',
+                         })
+                        }
+                      }
+                    })
+                  } else{
+                    getLocation()
+                  }
+                }
+              })
+            }
+          }
+        })
       }
     })
+
   })
 }
-
 
 /**
  * 根据地址数组获取坐标数组
@@ -61,11 +72,11 @@ export async function getLocationByAddressList(addressList) {
     promiseList.push(pro)
   })
 
-//当多个请求全部完成时
+  //当多个请求全部完成时
   let resList = await Promise.all(promiseList)
   //得到各门店坐标数组
   let locationList = resList.map(r => r.result.location)
-  
+
   //console.log(locationList)
 
   return locationList
@@ -74,18 +85,24 @@ export async function getLocationByAddressList(addressList) {
 
 
 /**根据定位获取地址名称 */
-export async function getAddressByLocation({lat, lng}) {
+export async function getAddressByLocation({
+  lat,
+  lng
+}) {
   let res = await $get('https://apis.map.qq.com/ws/geocoder/v1/', {
     location: [lat, lng].join(','),
     key: TENCENT_MAP_KEY
   })
   //console.log(res.data.result)
- return res.result.address
+  return res.result.address
 }
 
 
 /**根据开始坐标和目标地址获取最近的地址 */
-export async function getMinDistance({lat,lng}, toAddressList) {
+export async function getMinDistance({
+  lat,
+  lng
+}, toAddressList) {
 
   let locationList = await getLocationByAddressList(toAddressList)
 
@@ -103,7 +120,7 @@ export async function getMinDistance({lat,lng}, toAddressList) {
   })
 
   //距离数组和请求门店的顺序对应
-  let distanceList = res.result.elements.map(r =>r.distance)
+  let distanceList = res.result.elements.map(r => r.distance)
   console.log(...distanceList)
   //最小距离
   let minDistance = Math.min(...distanceList)

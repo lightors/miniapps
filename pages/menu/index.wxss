@@ -1,9 +1,9 @@
 /* pages/menu/index.wxss */
-.foot {
-  position: fixed;
-  width: 100vw;
-  bottom: 0;
-  
+
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .nav {
@@ -15,6 +15,7 @@
 .left {
   position: absolute;
   left: 0;
+  top: 20rpx;
   padding:0 20rpx;
   height:100rpx;
   
@@ -28,7 +29,8 @@
 .btn {
   position: absolute;
   right: 0;
-  height:100rpx;
+  top:10rpx;
+  height:80rpx;
   border: 4rpx solid #82a5d3;
   width: 180rpx;
   padding: 4rpx;
@@ -50,12 +52,47 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  border-radius: 50rpx;
+  border-radius: 40rpx;
   
 }
 
 image {
   width: 100%;
-  margin: 20rpx 0;
+  margin: 20rpx 0 0;
+  height: 480rpx;
+}
+
+
+.main {
+  /* background: red; */
+  /* flex: calc(100vh - 620rpx); */
+  flex: 1;
+  display: flex;
+}
+
+
+.menu {
+  width: 200rpx;
+   /* color: #f5f5f6; */
+  text-align: center;
+}
+
+.menu .item {
+  padding: 20rpx 0 ;
+  color: #999;
+  font-size: 28rpx;
+   border-left:10rpx solid transparent;
+ 
+}
+
+.menu .item.active {
+  background: #fff;
+  color: #000;
+  border-left-color:#82a5d3;
+}
+
+.goodslist {
+  flex: 1;
+  /* background: gray; */
 }
 

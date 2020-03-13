@@ -9,13 +9,25 @@
   </view>
   <view class="right flex a-center btn">
     <view>自提</view>
-    <view  class="active">外送</view>
+    <view class="active">外送</view>
   </view>
 </view>
 
 
 
 <image src=" http://106.54.82.49/img/pe/banner.jpg "></image>
-<button class="foot" bindtap="callme">
-  联系客服
-</button>
+
+
+
+
+
+<view class="main">
+  <view class="menu">
+    <view bindtap="changeMenu" data-index="{{index}}" class="item {{index === activeMenuIndex?'active':''}}" wx:for="{{menulist}}" wx:key="key">
+      {{item.name}}</view>
+
+
+  </view>
+  <view class="goodslist"></view>
+
+</view>
