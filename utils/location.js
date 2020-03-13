@@ -121,7 +121,7 @@ export async function getMinDistance({
 
   //距离数组和请求门店的顺序对应
   let distanceList = res.result.elements.map(r => r.distance)
-  console.log(...distanceList)
+  //console.log(...distanceList)
   //最小距离
   let minDistance = Math.min(...distanceList)
   //最小距离所在下标

@@ -17,7 +17,7 @@ page {
   left: 0;
   top: 20rpx;
   padding:0 20rpx;
-  height:100rpx;
+  height:80rpx;
   
 }
 
@@ -36,8 +36,11 @@ page {
   padding: 4rpx;
   color: #82a5d3;
   border-radius: 50rpx;
-  font-size: 28rpx
+  font-size: 28rpx;
+
 }
+
+
 
 .right view {
   flex: 1;
@@ -73,6 +76,7 @@ image {
 
 .menu {
   width: 200rpx;
+  height: 100%;
    /* color: #f5f5f6; */
   text-align: center;
 }
@@ -96,3 +100,43 @@ image {
   /* background: gray; */
 }
 
+.title {
+  font-size: 30rpx;
+  padding: 0 30rpx;
+}
+
+.line {
+  height:3rpx;
+  background: #999;
+  flex: 1;
+}
+
+
+.goodslist .add {
+  background: #82a5d3;
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color:#fff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 36rpx;
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+
+}
+
+.goodslist {
+  height: 100%
+}
+
+.goodslist .item {
+  padding: 10rpx;
+}
+
+.goodslist .item .left1 image {
+  border-radius: 6rpx;
+  
+}

@@ -22,12 +22,41 @@
 
 
 <view class="main">
-  <view class="menu">
+  <scroll-view scroll-y class="menu">
     <view bindtap="changeMenu" data-index="{{index}}" class="item {{index === activeMenuIndex?'active':''}}" wx:for="{{menulist}}" wx:key="key">
       {{item.name}}</view>
 
 
-  </view>
-  <view class="goodslist"></view>
+  </scroll-view>
+
+
+  <scroll-view scroll-y class="goodslist">
+    <view class="flex a-center">
+      <view class="title">{{menulist[activeMenuIndex].name}}</view>
+      <view class="line"></view>
+    </view>
+
+    <view wx:for="{{goodslist}}" wx:key="key" class="flex relative item">
+      <view class="left1">
+        <image style="width:150rpx;height:150rpx;" src="{{item.img}}">
+        </image>
+      </view>
+
+
+
+      <view style="flex:1;flex-direction:column;" class="flex j-space">
+        <view>
+          <view style="padding-top:10rpx;">{{item.name}}</view>
+          <view style="font-size:26rpx;color:#999;padding:5rpx;">{{item.enname}}</view>
+        </view>
+        <view style="padding:10rpx 0;font-weight:bold;">￥{{item.price}}</view>
+      </view>
+
+
+
+      <view class="add">+</view>
+    </view>
+
+  </scroll-view>
 
 </view>

@@ -5,8 +5,6 @@ import {
   getMinDistance
 } from '../../utils/location.js'
 
-
-
 import {
   getMock,
   getData
@@ -22,9 +20,16 @@ Page({
 
     //async  await 写法
 
+    this.initData()
 
-    this.getMenu()
 
+  },
+
+
+  async initData() {
+    await this.getMenu()
+
+    this.getShopsList()
   },
 
   onShow() {
@@ -57,7 +62,7 @@ Page({
     //获取当前经纬度 let start = {lat, lng}
     let start = await getLocation()
 
-    let toList = this.data.shoplist.map(r=>r.address)
+    let toList = this.data.shoplist.map(r => r.address)
 
     let {
       minIndex,
@@ -82,11 +87,30 @@ Page({
     })
   },
 
+  async getShopsList() {
+
+    //传参给后端
+    let type = this.data.menulist[this.data.activeMenuIndex].id
+    let res = await getMock('/getGoodsListByTpye', {
+      type
+    })
+
+    //console.log(goodslist);
+    this.setData({
+      goodslist: res.goodslist
+    })
+
+
+  },
+
 
   changeMenu(e) {
     this.setData({
       activeMenuIndex: getData(e).index
     })
+
+
+    this.getShopsList()
   },
 
   data: {
@@ -94,7 +118,8 @@ Page({
     menulist: [],
     minDistanceShop: {},
     activeMenuIndex: 0,
-    shoplist: []
+    shoplist: [],
+    goodslist: []
   },
 
 

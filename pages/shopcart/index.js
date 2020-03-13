@@ -1,5 +1,6 @@
 // pages/shopcart/index.js
-import {getData} from "../../utils/common.js"
+import { getData, getMock} from "../../utils/common.js"
+
 
 Page({
   //计算总价
@@ -112,11 +113,26 @@ Page({
 
   },
 
+
+  async getGoodsList() {
+    let res = await getMock('/cartgoodslist')
+
+    console.log(res.cartgoodslist)
+
+    this.goodslist = res.cartgoodslist 
+
+    this.setData({
+      goodslist: this.goodslist
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.calcTotalMoney();
+
+    this.getGoodsList()
   },
 
   /**
