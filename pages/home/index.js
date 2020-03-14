@@ -12,7 +12,7 @@ Page({
     })
   },
 
-  settext(e) {
+/*   settext(e) {
    this.setData({
      count: e.detail.value
    })
@@ -25,8 +25,8 @@ Page({
     }) 
   
   },
-
-  del(e) {
+ */
+/*   del(e) {
     console.log(getData(e));
     wx.showModal({
       title: '友情提示',
@@ -44,11 +44,19 @@ Page({
 
     
   },
+ */
+
+  closeshadow() {
+    this.setData({
+      showshadow:false
+    })
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
+    showshadow:true,
     nickname: "is",
     count:1,
     activeType:'1',
@@ -77,29 +85,18 @@ Page({
     recommends:[],
   },
 
-  add() {
-    //console.log(111);
-    this.data.arr.push({
-      id:111231,
-      name:"lightor"
-    })
-
-
-    this.setData({
-      arr:this.data.arr
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    $get('http://123.207.32.32:8000/api/wh/recommend')
-    .then(res=> {
+
+    setTimeout(()=> {
       this.setData({
-        recommends: res.data.list
+        showshadow:true,
       })
-    })
+    },300)
+
 
     
   },

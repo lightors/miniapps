@@ -117,7 +117,7 @@ Page({
   async getGoodsList() {
     let res = await getMock('/cartgoodslist')
 
-    console.log(res.cartgoodslist)
+    //console.log(res.cartgoodslist)
 
     this.goodslist = res.cartgoodslist 
 

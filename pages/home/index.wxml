@@ -1,51 +1,95 @@
 <!--pages/home/index.wxml-->
-<swiper indicator-dots="{{true}}" 
-indicator-color="#fff" 
-autoplay="{{true}}" interval="{{3000}}"
-circular="{{true}}"
-indicator-active-color="yellow">
+<swiper indicator-dots="{{true}}" indicator-color="#fff" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}" indicator-active-color="yellow">
   <swiper-item>
-    <image mode="aspectFit" src="http://p1.music.126.net/ZUumIFbrM-4V9H0VlhKTqQ==/109951164767141277.jpg?imageView&quality=89"></image>
+    <image mode="aspectFit" src="https://img9.51tietu.net/pic/2019-091402/pthymhtt1dupthymhtt1du.jpg"></image>
   </swiper-item>
   <swiper-item>
-    <image mode="aspectFit" src="http://p1.music.126.net/oqbroNCHcZ4duhxUdTUUmQ==/109951164767168238.jpg?imageView&quality=89"></image>
+    <image mode="aspectFit" src="https://img9.51tietu.net/pic/2019-091402/42wb3xgztkb42wb3xgztkb.jpg"></image>
   </swiper-item>
   <swiper-item>
-    <image mode="aspectFit" src="http://p1.music.126.net/dUngzBPrrhjaozshGg9qcA==/109951164769063461.jpg?imageView&quality=89"></image>
+    <image mode="aspectFit" src="https://img9.51tietu.net/pic/2019-091402/f0x3rgobe10f0x3rgobe10.jpg"></image>
   </swiper-item>
 </swiper>
 
-<navigator 
-url="../menu/index" open-type="switchTab">
-<button>跳转
-</button>
-</navigator>
+<!-- <view style="display:flex;justify-content:space-between">
+  <view class="{{activeType==='1'?'active':''}}" data-type="1" bindtap="settype">火车票</view>
+  <view class="{{activeType==='2'?'active':''}}" data-type="2" bindtap="settype">汽车票</view>
+  <view class="{{activeType==='3'?'active':''}}" data-type="3" bindtap="settype">飞机票</view>
 
-<button bindtap="add">新增</button>
-<view bindtap="go">
-跳转
-</view>
-
-<input value="{{count}}" bindinput="settext"></input>
-<view>{{count}}</view>
-
-
-<view style="display:flex;justify-content:space-between">
-<view class="{{activeType==='1'?'active':''}}" data-type="1" bindtap="settype">火车票</view>
-<view class="{{activeType==='2'?'active':''}}" data-type="2"  bindtap="settype">汽车票</view>
-<view class="{{activeType==='3'?'active':''}}" data-type="3"  bindtap="settype">飞机票</view>
-
-</view>
-
-<!-- <view wx:for="{{arr}}" style="display:flex;">
-{{item.name}}---{{index}}  
-<button bindtap="del" data-index="{{index}}">删除</button>
 </view> -->
 
 
-<view wx:for="{{recommends}}" wx:key="key" style="display:flex;">
-{{item.item_id}}
-<!-- <image src="{{item.image}}"></image> -->
-<button bindtap="del" data-index="{{index}}">删除</button>
+<!-- <view wx:for="{{recommends}}" wx:key="key" style="display:flex;">
+  {{item.item_id}}
+  <!-- <image src="{{item.image}}"></image> -->
+<!-- <button bindtap="del" data-index="{{index}}">删除</button>
 
-</view>
+  </view>  -->
+
+
+
+<van-cell-group class="menu">
+  <van-cell title="" label="ORDER NOW" border="{{ false }}">
+    <view slot="title" style="font-weight:bold;">
+      现在下单
+    </view>
+
+    <view slot="right-icon">
+      <view class="iconfont icon-kafei"></view>
+
+    </view>
+
+
+  </van-cell>
+
+
+  <van-cell title="" label="ORDER NOW" border="{{ false }}">
+    <view slot="title" style="font-weight:bold;">
+      咖啡钱包
+    </view>
+
+    <view slot="right-icon">
+      <view class="iconfont icon-wallet"></view>
+
+    </view>
+
+
+  </van-cell>
+
+
+  <van-cell title="" label="ORDER NOW" border="{{ false }}">
+    <view slot="title" style="font-weight:bold;">
+      瑞幸潮品
+    </view>
+
+    <view slot="right-icon">
+      <view class="iconfont icon-icon-"></view>
+
+    </view>
+
+
+  </van-cell>
+
+
+  <van-cell title="" label="ORDER NOW" border="{{ false }}">
+    <view slot="title" style="font-weight:bold;">
+      送他咖啡
+    </view>
+
+    <view slot="right-icon">
+      <view class="iconfont icon-liwu"></view>
+
+    </view>
+
+
+  </van-cell>
+</van-cell-group>
+
+<!-- <view catchtouchmove="false" class="shadow flex a-center j-center" wx:if="{{showshadow}}">
+  <view class="close" bindtap="closeshadow">X</view>
+  <navigator url="../activity/index" hover-class="none">
+    <image class="main" src="https://s1.hdslb.com/bfs/static/audio/submit/static/img/music-theme.ce7511c.png"></image>
+
+  </navigator>
+
+</view> -->
