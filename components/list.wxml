@@ -1,0 +1,7 @@
+<!--components/list.wxml-->
+ <view class="list">
+      <view class="label">规格</view>
+      <view bindtap="changegg" data-type="0" class="item {{activeGG === 0?'active':''}}">大</view>
+      <view bindtap="changegg" data-type="1"  class="item {{activeGG === 1?'active':''}}">中</view>
+      <view bindtap="changegg" data-type="2"  class="item {{activeGG === 2?'active':''}}">小</view>
+    </view>

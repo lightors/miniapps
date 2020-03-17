@@ -12,7 +12,7 @@ Page({
 
 
   onChange(e) {
-    console.log(e.detail.index-1)
+    //console.log(e.detail.index-1)
 
     this.data.ordertype = e.detail.index - 1
     this.data.pageindex = 1

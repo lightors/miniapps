@@ -5,6 +5,8 @@ import {
   getMinDistance
 } from '../../utils/location.js'
 
+
+
 import {
   GET_SHOPLIST,
   GET_MENU,
@@ -19,6 +21,26 @@ import {
 
 
 Page({
+
+  getdetail() {
+    wx.hideTabBar({
+      aniamtion: true,
+      success: () => {
+        this.setData({
+          isHideDetail: false
+        })
+      }
+    })
+  },
+
+  closedetail() {
+    this.setData({
+      isHideDetail: true,
+    })
+    wx.showTabBar({
+      animation:true,
+    })
+  },
 
   onLoad() {
 
@@ -120,13 +142,17 @@ Page({
   },
 
   data: {
+    isHideDetail: false,
     myAddress: null,
     menulist: [],
     minDistanceShop: {},
     activeMenuIndex: 0,
     shoplist: [],
-    goodslist: []
+    goodslist: [],
+    
   },
+
+
 
 
 })

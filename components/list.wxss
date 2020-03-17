@@ -1,0 +1,27 @@
+/* components/list.wxss */
+
+.list {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+
+}
+
+.list .label {
+  padding:0 20rpx;
+}
+
+.list .item {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 60rpx;
+  margin: 0 20rpx;
+  color:#ccbeb5;
+  border: 3rpx solid #ccbeb5;
+  border-radius: 20rpx;
+}
+
+.list .item.active {
+  color:#fff;
+  background: #ccbeb5;
+}

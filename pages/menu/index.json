@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "list":"../../components/list"
+  },
   "navigationBarTitleText": "菜单"
 }

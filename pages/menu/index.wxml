@@ -54,9 +54,33 @@
 
 
 
-      <view class="add">+</view>
+      <view class="add" bindtap="getdetail">+</view>
     </view>
 
   </scroll-view>
 
+</view>
+
+
+
+<view class="detail {{isHideDetail?'':'active'}}">
+
+  <view class="close" bindtap="closedetail">X</view>
+
+  <image style="width:100vw;height:50vw" src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1660751855,1643134128&fm=26&gp=0.jpg"> </image>
+
+  <view style="padding:10rpx;">
+    <view style="font-size:36rpx">
+      摩卡星冰乐
+    </view>
+    <view style="font-size:26rpx;color:#ccc;padding:10rpx 0">
+      MOCA STAR ICE HAPPY
+    </view>
+   
+
+  </view>
+
+
+<list></list>
+<list></list>
 </view>
