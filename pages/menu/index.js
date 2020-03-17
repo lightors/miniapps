@@ -6,6 +6,12 @@ import {
 } from '../../utils/location.js'
 
 import {
+  GET_SHOPLIST,
+  GET_MENU,
+  GET_GOODSLIST_BY_TYPE
+
+} from "../../config/api.js"
+import {
   getMock,
   getData
 } from "../../utils/common.js"
@@ -37,7 +43,7 @@ Page({
   },
 
   async getShopList() {
-    let shoplist = await getMock('/getShopList')
+    let shoplist = await getMock(GET_SHOPLIST)
     this.data.shoplist = shoplist.shoplist
     //console.log(this.data.shoplist.shoplist)
     this.getAddress()
@@ -80,7 +86,7 @@ Page({
 
 
   async getMenu() {
-    let res = await getMock("/menu")
+    let res = await getMock(GET_MENU)
 
     this.setData({
       menulist: res.menu
@@ -91,7 +97,7 @@ Page({
 
     //传参给后端
     let type = this.data.menulist[this.data.activeMenuIndex].id
-    let res = await getMock('/getGoodsListByTpye', {
+    let res = await getMock(GET_GOODSLIST_BY_TYPE, {
       type
     })
 

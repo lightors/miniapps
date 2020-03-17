@@ -1,6 +1,7 @@
 // pages/shopcart/index.js
 import { getData, getMock} from "../../utils/common.js"
 
+import { GET_CART_GOODSLIST} from "../../config/api.js"
 
 Page({
   //计算总价
@@ -115,7 +116,7 @@ Page({
 
 
   async getGoodsList() {
-    let res = await getMock('/cartgoodslist')
+    let res = await getMock(GET_CART_GOODSLIST)
 
     //console.log(res.cartgoodslist)
 

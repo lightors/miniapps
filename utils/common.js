@@ -26,6 +26,11 @@ export function $get(url, data) {
           },
           
           fail(e) {
+            wx.showToast({
+              title: '服务器繁忙，请稍后重试',
+              icon:"none"
+            })
+
             reject(e)
           },
         complete() {

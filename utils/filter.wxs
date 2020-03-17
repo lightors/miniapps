@@ -1,0 +1,11 @@
+function fmtState(state) {
+  switch (state) {
+    case 0: return '待支付';
+    case 1: return '已完成';
+    case 2: return '已取消';
+  }
+}
+
+module.exports = {
+  fmtState:fmtState
+}

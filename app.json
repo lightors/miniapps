@@ -1,15 +1,18 @@
-{ 
+{
   "usingComponents": {
     "van-button": "/want-weapp/button/index",
     "van-cell": "/want-weapp/cell/index",
-    "van-cell-group": "/want-weapp/cell-group/index"
+    "van-cell-group": "/want-weapp/cell-group/index",
+    "van-tab": "/want-weapp/tab/index",
+    "van-tabs": "/want-weapp/tabs/index"
   },
   "pages": [
     "pages/home/index",
     "pages/menu/index",
     "pages/mine/index",
     "pages/shopcart/index",
-    "pages/activity/index"
+    "pages/activity/index",
+    "pages/order/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,6 +37,12 @@
         "text": "菜单"
       },
       {
+        "pagePath": "pages/order/index",
+        "iconPath": "/assets/img/order.png",
+        "selectedIconPath": "/assets/img/order1.png",
+        "text": "订单"
+      },
+      {
         "pagePath": "pages/shopcart/index",
         "iconPath": "/assets/img/find.png",
         "selectedIconPath": "/assets/img/find1.png",
@@ -51,6 +60,12 @@
     "scope.userLocation": {
       "desc": "需要获取您的地理位置，请确认授权"
     }
+  },
+  "networkTimeout": {
+    "request": 3000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

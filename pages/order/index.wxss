@@ -1,0 +1,10 @@
+/* pages/order/index.wxss */
+
+page {
+  background: #eee;
+}
+
+.item {
+  background: #fff;
+  margin:20rpx 0
+}
