@@ -36,6 +36,10 @@ Page({
   closedetail() {
     this.setData({
       isHideDetail: true,
+      activeGuigeIndex: 0,
+      activeWenduIndex: 0,
+      activeTangduIndex: 0,
+
     })
     wx.showTabBar({
       animation:true,
@@ -142,15 +146,55 @@ Page({
   },
 
   data: {
-    isHideDetail: false,
+    isHideDetail: true,
     myAddress: null,
     menulist: [],
     minDistanceShop: {},
     activeMenuIndex: 0,
     shoplist: [],
     goodslist: [],
+    guigelist:['大','中','小'],
+    wendulist:["热",'常温','冰'],
+    tangdulist: ["全糖", '半糖', '无糖'],
+    activeGuigeIndex:0,
+    activeWenduIndex:0,
+    activeTangduIndex:0,
+
     
   },
+
+
+  changeguige(e) {
+    //console.log(e.detail)
+    //console.log(this.data.guigelist[e.detail])
+
+    this.data.activeGuigeIndex = e.detail
+  
+  },
+
+    changewendu(e) {
+    //console.log(e.detail)
+    //console.log(this.data.guigelist[e.detail])
+
+    this.data.activeWenduIndex = e.detail
+
+  },
+
+    changetangdu(e) {
+    //console.log(e.detail)
+    //console.log(this.data.guigelist[e.detail])
+
+    this.data.activeTangduIndex = e.detail
+
+  },
+
+
+  order() {
+    console.log(this.data.guigelist[this.data.activeGuigeIndex],this.data.wendulist[this.data.activeWenduIndex],this.data.tangdulist[this.data.activeTangduIndex],)
+  }
+
+
+
 
 
 

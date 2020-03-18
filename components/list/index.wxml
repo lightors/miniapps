@@ -1,0 +1,5 @@
+<!--components/list.wxml-->
+<view class="list">
+  <view class="label">{{label}}</view>
+  <view wx:for="{{list}}" wx:key="key" bindtap="changIndex" data-index="{{index}}" class="item  {{_activeIndex === index?'active':''}}">{{item}}</view>
+  </view>

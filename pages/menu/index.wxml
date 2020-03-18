@@ -81,6 +81,10 @@
   </view>
 
 
-<list></list>
-<list></list>
+<list label="规格" activeIndex="{{activeGuigeIndex}}" bind:change="changeguige" list="{{guigelist}}"></list>
+<list label="温度" activeIndex="{{activeWenduIndex}}" bind:change="changewendu" list="{{wendulist}}"></list>
+<list label="糖度" activeIndex="{{activeTangduIndex}}" bind:change="changetangdu" list="{{tangdulist}}"></list>
+
+
+<van-button bindtap="order" type="info">下单</van-button>
 </view>

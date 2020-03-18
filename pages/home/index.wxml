@@ -85,11 +85,11 @@
   </van-cell>
 </van-cell-group>
 
-<!-- <view catchtouchmove="false" class="shadow flex a-center j-center" wx:if="{{showshadow}}">
+<view catchtouchmove="false" class="shadow flex a-center j-center" wx:if="{{showshadow}}">
   <view class="close" bindtap="closeshadow">X</view>
   <navigator url="../activity/index" hover-class="none">
     <image class="main" src="https://s1.hdslb.com/bfs/static/audio/submit/static/img/music-theme.ce7511c.png"></image>
 
   </navigator>
 
-</view> -->
+</view>
